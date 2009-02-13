@@ -1,0 +1,33 @@
+#!/usr/local/bin/perl -l
+# $Id$
+use strict;
+use warnings;
+use LWP::Simple;
+use Image::ExifTool qw(:Public);
+use Pod::Usage;
+
+my $url = shift || pod2usage(2);
+my $data = get($url);
+my $info = ImageInfo(\$data);
+for my $key (sort keys %$info) {
+    my $value = $info->{$key};
+    print "$key: $value";
+}
+
+
+__END__
+
+=head1 NAME
+
+lwp-exifread - Dump remote image file's Exif information
+
+=head1 SYNOPSIS
+
+  $ lwp-exifread http://example.com/image.jpg
+
+=head1 DESCRIPTION
+
+
+
+=cut
+
