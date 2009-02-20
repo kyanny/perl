@@ -12,7 +12,7 @@ GetOptions(
     'reverse' => \$reverse,
 );
 pod2usage(2) if $help;
-pod2usage(2) if -t STDIN;
+#pod2usage(2) if -t STDIN;
 
 my $re = qr{^(\S+) (\S+) (\S+) \[(.*?)\] .*$};
 

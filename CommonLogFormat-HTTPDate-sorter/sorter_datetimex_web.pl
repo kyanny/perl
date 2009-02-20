@@ -12,7 +12,7 @@ GetOptions(
     'reverse' => \$reverse,
 );
 pod2usage(2) if $help;
-pod2usage(2) if -t STDIN;
+#pod2usage(2) if -t STDIN;
 
 my $dtx = DateTimeX::Web->new(time_zone => 'local');
 my $re = qr{^(\S+) (\S+) (\S+) \[(.*?)\] .*$};
